@@ -1,0 +1,37 @@
+[
+    {
+        "model": "challenge_api.pettype",
+        "pk": 1,
+        "fields": {
+            "label": "Cat"
+        }
+    },
+    {
+        "model": "challenge_api.pettype",
+        "pk": 2,
+        "fields": {
+            "label": "Dog"
+        }
+    },
+    {
+        "model": "challenge_api.pettype",
+        "pk": 3,
+        "fields": {
+            "label": "Horse"
+        }
+    },
+    {
+        "model": "challenge_api.pettype",
+        "pk": 4,
+        "fields": {
+            "label": "Bird"
+        }
+    },
+    {
+        "model": "challenge_api.pettype",
+        "pk": 5,
+        "fields": {
+            "label": "Lizard"
+        }
+    }
+]

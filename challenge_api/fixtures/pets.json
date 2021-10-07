@@ -1,0 +1,68 @@
+[
+    {
+        "model": "challenge_api.pet",
+        "pk": 1,
+        "fields": {
+            "user": 1,
+            "name": "Jack",
+            "age": 12,
+            "type": 2,
+            "favorite_activity": "Napping"
+        }
+    },
+    {
+        "model": "challenge_api.pet",
+        "pk": 2,
+        "fields": {
+            "user": 1,
+            "name": "Izzy",
+            "age": 5,
+            "type": 2,
+            "favorite_activity": "Belly Rubs"
+        }
+    },
+    {
+        "model": "challenge_api.pet",
+        "pk": 3,
+        "fields": {
+            "user": 1,
+            "name": "Eleanor",
+            "age": 8,
+            "type": 2,
+            "favorite_activity": "Eating"
+        }
+    },
+    {
+        "model": "challenge_api.pet",
+        "pk": 4,
+        "fields": {
+            "user": 2,
+            "name": "Mister Ed",
+            "age": 4,
+            "type": 3,
+            "favorite_activity": "Talking"
+        }
+    },
+    {
+        "model": "challenge_api.pet",
+        "pk": 5,
+        "fields": {
+            "user": 2,
+            "name": "Tweetie",
+            "age": 2,
+            "type": 4,
+            "favorite_activity": "Singing"
+        }
+    },
+    {
+        "model": "challenge_api.pet",
+        "pk": 6,
+        "fields": {
+            "user": 2,
+            "name": "Silvester",
+            "age": 6,
+            "type": 1,
+            "favorite_activity": "Chasing Tweetie"
+        }
+    }
+]
