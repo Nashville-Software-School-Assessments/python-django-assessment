@@ -8,6 +8,6 @@ This assessment will check your ability to write django models, serializers, and
     pipenv install
     ```
 
-1. In order to pass the assessment, you will need to add code to the `Pet` and `PetType` models, `PetView`, and `PetSerializer`. Check out the issue tickets for more information.
+1. In order to pass the assessment, you will need to add code to the `Pet` and `PetType` models, `PetView`, and `PetSerializer`. Check out the issue tickets and project board for more information.
 1. There is a test file that will check your work. To run the tests before pushing to github `python3 manage.py test` will show you the test output.
-1. Once you are satisfied with your work, push your code to github
+1. Once all tests are passing, push your code to github
