@@ -44,6 +44,13 @@ class ApiTests(APITestCase):
             }
         )
 
+    def test_retrieve_returns_404_not_found(self):
+        """Tests the retrieve method on PetView
+            If an invalid id is used, the retrieve method should return a 404 status code
+        """
+        response = self.client.get('/pets/100')
+        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
+
     def test_update_pet(self):
         """Tests the update method on PetView
             Expects the pet object to be updated in the database and a 204 status code returned
