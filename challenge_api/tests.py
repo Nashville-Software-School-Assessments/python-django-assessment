@@ -8,11 +8,11 @@ from challenge_api.models import Pet
 class ApiTests(APITestCase):
     """Test Class for the PetView - Do Not change this file"""
 
-    fixtures = ['user', 'tokens' 'pet_type', 'pets']
+    fixtures = ['user', 'tokens', 'pet_type', 'pets']
 
     def setUp(self):
         self.user = User.objects.get(pk=1)
-        token = Token.objects.create(user=self.user)
+        token = Token.objects.get(user=self.user)
         self.client.credentials(HTTP_AUTHORIZATION=f'Token {token.key}')
         return super().setUp()
 
