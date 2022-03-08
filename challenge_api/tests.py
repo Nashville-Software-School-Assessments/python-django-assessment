@@ -34,7 +34,8 @@ class ApiTests(APITestCase):
         response = self.client.get(f'/pets/{pet_id}')
         self.assertEqual(response.status_code, status.HTTP_200_OK)
         self.assertEqual(
-            response.data, {
+            response.data, 
+            {
                 'id': actual.id,
                 'name': actual.name,
                 'age': actual.age,
@@ -43,33 +44,6 @@ class ApiTests(APITestCase):
                 'type': actual.type_id
             }
         )
-
-    def test_retrieve_returns_404_not_found(self):
-        """Tests the retrieve method on PetView
-            If an invalid id is used, the retrieve method should return a 404 status code
-        """
-        response = self.client.get('/pets/100')
-        self.assertEqual(response.status_code, status.HTTP_404_NOT_FOUND)
-
-    def test_update_pet(self):
-        """Tests the update method on PetView
-            Expects the pet object to be updated in the database and a 204 status code returned
-        """
-        pet_id = 2
-        og_pet = Pet.objects.get(pk=pet_id)
-        update_data = {
-            'id': og_pet.id,
-            'name': og_pet.name,
-            'age': 9,
-            'favorite_activity': og_pet.favorite_activity,
-            'type': og_pet.type_id
-        }
-        response = self.client.put(
-            f'/pets/{pet_id}', update_data, format='json')
-        self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-
-        updated_pet = Pet.objects.get(pk=2)
-        self.assertEqual(updated_pet.age, update_data['age'])
 
     def test_delete_pet(self):
         """Test the delete method on PetView
@@ -98,21 +72,3 @@ class ApiTests(APITestCase):
 
         new_pet = Pet.objects.get(pk=response.data['id'])
         self.assertEqual(new_pet.name, pet_data['name'])
-
-    def test_filter_pet_list_by_type(self):
-        """Test the list method with a query string parameter
-            Expects all the pets in the response.data to have the type requested
-        """
-        type_id = 2
-        response = self.client.get(f'/pets?type={type_id}')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertTrue(
-            all([int(pet['type']) == type_id for pet in response.data]))
-
-    def test_my_pets(self):
-        """Test the my_pets custom action
-            Expects the pets in the response.data to belong to the current user
-        """
-        response = self.client.get('/pets/my_pets')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
-        self.assertTrue(all([pet['user'] == self.user.id for pet in response.data]))
