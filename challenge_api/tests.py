@@ -62,7 +62,7 @@ class ApiTests(APITestCase):
         pet_data = {
             "name": "Fred",
             "age": 4,
-            "type_id": 3,
+            "type": 3,
             "favorite_activity": "Swimming"
         }
         response = self.client.post('/pets', pet_data, format='json')
