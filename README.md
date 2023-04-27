@@ -1,4 +1,4 @@
-# Book 2 Assessment
+# Django Assessment
 This assessment will check your ability to write django models, serializers, and viewsets.
 
 This will also assess your ability to solve problems and ask for help. Use your resources! This includes instructors, google, and past projects. This does not include teammates. 
